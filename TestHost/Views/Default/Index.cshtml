@@ -1,0 +1,59 @@
+﻿@model TestHost.Controllers.Model
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Request dump</title>
+    <style>
+        body{
+            font-family: Consolas, monospace;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+<h3>Usage example</h3>
+<p>http://localhost:3333/?delay=1000&code=500</p>
+
+<h3>Request</h3>
+<table>
+    <tr>
+        <td>Method</td>
+        <td>@Model.Method</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>@Model.Url</td>
+    </tr>
+    <tr>
+        <td>Remote IP</td>
+        <td>@Model.RemoteIp</td>
+    </tr>
+    <tr>
+        <td>Local IP</td>
+        <td>@Model.LocalIp</td>
+    </tr>
+    <tr>
+        <td>ConnectionId</td>
+        <td>@Model.ConnectionId</td>
+    </tr>
+    <tr>
+        <td>TraceId</td>
+        <td>@Model.TraceId</td>
+    </tr>
+</table>
+
+<h3>Headers</h3>
+<table>
+    @foreach (var (key, value) in Model.Headers)
+    {
+        <tr>
+            <td>@key</td>
+            <td>@value</td>
+        </tr>
+    }
+</table>
+
+</body>
+</html>
