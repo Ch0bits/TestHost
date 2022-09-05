@@ -1,5 +1,5 @@
 
-# Project Title
+# TestHost
 
 Dummy stub service can show passed HTTP headers, simulate status codes, and response delay.
 Sometimes it helps debug newly deployed virtual machines.
