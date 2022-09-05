@@ -1,28 +1,9 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+namespace TestHost;
+
 using System;
 using System.Linq;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-
-public class Startup
-{
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddControllersWithViews();
-    }
-
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        app.UseDeveloperExceptionPage();
-        app.UseRouting();
-        app.UseEndpoints(route =>
-        {
-            route.MapControllers();
-            route.MapFallbackToController("Index", "Default");
-        });
-    }
-}
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
 public static class Program
 {
